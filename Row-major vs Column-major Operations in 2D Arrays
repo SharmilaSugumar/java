@@ -1,0 +1,55 @@
+Row-major Traversal:
+
+for (int i = 0; i < array.length; i++) {  // Iterate rows
+    for (int j = 0; j < array[i].length; j++) {  // Iterate columns
+        // Access array[i][j]
+    }
+}
+Column-major Traversal:
+
+for (int j = 0; j < array[0].length; j++) {  // Iterate columns
+    for (int i = 0; i < array.length; i++) {  // Iterate rows
+        // Access array[i][j]
+    }
+}
+Example:
+
+class Codechef {
+    public static void main(String[] args) {
+        // Step 1: Declare and Initialize a 2D array
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Step 2: Row-major traversal
+        System.out.println("Row-major Order:");
+        for (int i = 0; i < matrix.length; i++) {  
+            for (int j = 0; j < matrix[i].length; j++) {  
+                System.out.print(matrix[i][j] + " ");  
+            }
+            System.out.println();
+        }
+
+        // Step 3: Column-major traversal
+        System.out.println("Column-major Order:");
+        for (int j = 0; j < matrix[0].length; j++) {  
+            for (int i = 0; i < matrix.length; i++) {  
+                System.out.print(matrix[i][j] + " ");  
+            }
+            System.out.println();
+        }
+    }
+}
+Expected Output:
+
+Row-major Order:
+1 2 3  
+4 5 6  
+7 8 9  
+
+Column-major Order:
+1 4 7  
+2 5 8  
+3 6 9  
