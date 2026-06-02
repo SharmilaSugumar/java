@@ -1,0 +1,8 @@
+// Declaration and Initialization in one step (Static Initialization)
+dataType[][] arrayName = {
+    {value1, value2},
+    {value3, value4}
+};
+
+// Declaration first, then Initialization (Dynamic Initialization)
+dataType[][] arrayName = new dataType[rows][columns]; 
