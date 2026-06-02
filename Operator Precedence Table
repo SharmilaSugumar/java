@@ -1,0 +1,10 @@
+Precedence Level	            Operators                        	Description                                    	Associativity
+1 (Highest)        	             ()                  	Parentheses (evaluated first)                            	Left-to-right
+2                             	++ --	                 Unary increment and decrement	
+3	                              * / %                 	Multiplication, division, modulus                      	Left-to-right
+4	                               + -	                    Addition and subtraction	                            Left-to-right
+5                           	< <= > >=	                    Relational operators	                              Left-to-right
+6	                              == !=	                      Equality operators	                                Left-to-right
+7	                               &&	                          Logical AND	                                      Left-to-right
+8	                               ||                         	Logical OR	                                      Left-to-right
+9 (Lowest)	                = += -= *= /= %=	           Assignment operators	                                  Right-to-left
