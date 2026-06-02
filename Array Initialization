@@ -1,0 +1,5 @@
+dataType[] arrayName = {value1, value2, value3, ...}; //Static Initialization (Direct Initialization)
+// dataType: This specifies the type of data the array will store (e.g., int, String, etc.).
+// arrayName: This is the name of your array variable.
+// Values: These are the initial values assigned to the array elements.
+dataType[] arrayName = new dataType[size]; // Dynamic Initialization (Using the new keyword)
