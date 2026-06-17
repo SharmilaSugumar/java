@@ -1,0 +1,82 @@
+1. Class
+Definition
+
+A class is a user-defined blueprint or template used to create objects. It defines the properties (attributes) and behaviors (methods) that objects of that class will have.
+
+Think of a class as a design of a house. The design itself is not a house, but many houses can be built from that design.
+
+2. Object
+Definition
+
+An object is an instance of a class. When a class is created, no memory is allocated. Memory is allocated only when an object is created.
+
+Think of a class as a blueprint and an object as the actual house built from that blueprint
+
+3. Attribute (Instance Variable / Data Member)
+Definition
+
+An attribute is a variable declared inside a class that stores information about an object. Attributes describe the state or characteristics of an object.
+
+4. Function
+Definition
+
+A function is a block of code that performs a specific task. It can take input, process it, and return an output.
+
+In Java, functions are generally called methods because every function must belong to a class.
+
+5. Method
+Definition
+
+A method is a function that is defined inside a class. Methods represent the behavior of an object.
+
+6. Method Overloading
+Definition
+
+Method Overloading is a feature in Java where multiple methods have the same name but different parameter lists.
+
+The compiler determines which method to call based on the number or type of arguments passed.
+
+
+// Class definition
+class Student {
+
+    // Attributes
+    String name;
+    int age;
+
+    // Method
+    void display() {
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    // Overloaded Method
+    void display(String course) {
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Course: " + course);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Object creation
+        Student s1 = new Student();
+
+        // Assign values to attributes
+        s1.name = "Sharmi";
+        s1.age = 21;
+
+        // Calling first method
+        s1.display();
+
+        System.out.println();
+
+        // Calling overloaded method
+        s1.display("Java Programming");
+    }
+}
