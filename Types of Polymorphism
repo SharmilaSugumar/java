@@ -1,0 +1,138 @@
+Polymorphism means "many forms" — the same method name can behave differently in different situations.
+
+Java mainly supports two types of polymorphism:
+
+1. Compile-Time Polymorphism (Static Polymorphism)
+
+Achieved using Method Overloading.
+
+The compiler decides which method to call during compilation.
+
+Example
+class Calculator {
+
+    // Method 1
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method 2 (Overloaded)
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        System.out.println(c.add(10, 20));
+        System.out.println(c.add(10, 20, 30));
+    }
+}
+Output
+30
+60
+
+The compiler knows:
+
+add(10,20) → first method
+add(10,20,30) → second method
+
+So the decision is made before the program runs.
+
+2. Runtime Polymorphism (Dynamic Polymorphism)
+
+Achieved using Method Overriding.
+
+The JVM decides which method to call while the program is running.
+
+Example
+class Animal {
+
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Animal a = new Dog();
+
+        a.sound();
+    }
+}
+Output
+Dog Barks
+
+The JVM checks the actual object (Dog) at runtime and calls Dog's sound() method.
+
+Method Overloading
+Definition
+
+Method Overloading means multiple methods in the same class have the same name but different parameter lists.
+
+Rules
+
+✅ Method name must be same
+
+✅ Parameters must be different
+
+❌ Return type alone cannot differentiate overloaded methods
+
+Valid Example
+class Demo {
+
+    void show() {
+        System.out.println("No Parameter");
+    }
+
+    void show(int x) {
+        System.out.println("One Integer");
+    }
+
+    void show(String name) {
+        System.out.println("One String");
+    }
+}
+Method Overriding
+Definition
+
+Method Overriding occurs when a child class provides its own implementation of a method already defined in the parent class.
+
+Rules
+
+✅ Inheritance is required
+
+✅ Method name must be same
+
+✅ Parameters must be same
+
+✅ Return type should be same (or covariant)
+
+Example
+class Parent {
+
+    void display() {
+        System.out.println("Parent Method");
+    }
+}
+
+class Child extends Parent {
+
+    @Override
+    void display() {
+        System.out.println("Child Method");
+    }
+}
