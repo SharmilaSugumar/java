@@ -1,0 +1,46 @@
+Think of constructors as the birth certificate or the initialization ceremony of an object. When you create an object in Java, it needs to be initialized with some initial values or properties. Constructors are used to initialize these properties and prepare the object for use.
+
+Let's take an example to understand this better. Suppose we have a class called Person which has some properties like name, age, and address. Here's how you would create an object of this class without using a constructor:
+
+Person p = new Person();
+p.name = "John";
+p.age = 25;
+p.address = "123 Main St";
+
+Why do we use constructors?
+
+Constructors are used to initialize an object's state when it is created. They ensure that an object starts with the required values and can perform any setup needed during object creation.
+
+class BankAccount {
+
+    String accountNumber;
+    String holderName;
+    double balance;
+
+    // Constructor
+    BankAccount(String accountNumber,
+                String holderName,
+                double balance) {
+
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        this.balance = balance;
+    }
+
+    void display() {
+        System.out.println(accountNumber);
+        System.out.println(holderName);
+        System.out.println(balance);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        BankAccount acc1 =
+            new BankAccount("12345", "Sharmi", 5000);
+
+        acc1.display();
+    }
+}
