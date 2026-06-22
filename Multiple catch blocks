@@ -1,0 +1,29 @@
+Sometimes, multiple exceptions can occur in one block of code, and it can be challenging to handle them all at once. This is where multiple catch blocks come in handy.
+
+Using multiple catch blocks, you can handle different exceptions separately, making your code more organized and easier to read. Let's take a look at an example:
+
+Without multiple catch blocks:
+
+try {
+    // some code that might throw an exception
+}
+catch (Exception e) {
+    System.out.println("An error occurred: " + e.getMessage());
+}
+In this example, the catch block catches any exception that occurs within the try block and prints out the error message. However, this approach doesn't distinguish between different types of exceptions, making it challenging to handle them separately.
+
+With multiple catch blocks:
+
+try {
+    // some code that might throw an exception
+}
+catch (NumberFormatException e) {
+    System.out.println("A number format exception occurred: " + e.getMessage());
+}
+catch (NullPointerException e) {
+    System.out.println("A null pointer exception occurred: " + e.getMessage());
+}
+catch (Exception e) {
+    System.out.println("An error occurred: " + e.getMessage());
+}
+In this example, we have separate catch blocks for different types of exceptions. If a Number format error occurs, the first catch block handles it, while the second catch block handles a null pointer exception. Any other exception will be caught by the last catch block.
